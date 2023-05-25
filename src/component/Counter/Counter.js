@@ -1,17 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function Counter(){
+function Counter() {
+  const [angka, setAngka] = useState(0);
+  function addAngka() {
+    setAngka(angka + 1);
+    console.log("## angka: ", angka);
+  }
 
-    const [hasil, setHasil] = useState(0);
-    function tambah(){
-        setHasil(hasil + 1);
-    };
-    return(
-        <div>
-            <p>Hasil: {hasil}</p>
-            <button onClick={tambah}>Add</button>
-        </div>
-    );
+  useEffect(
+    function () {
+      console.log("## component di-mount/di-update");
+
+      //Akses DOM
+      document.title = `Angka: ${angka}`;
+    },
+    [angka]
+  );
+
+  return (
+    <div>
+      <p>Hasil: {angka}</p>
+      <button onClick={addAngka}>Add</button>
+    </div>
+  );
 }
 
 export default Counter;

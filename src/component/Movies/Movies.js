@@ -1,12 +1,11 @@
 import Movie from "../Movie/Movie";
 import styles from "./Movies.module.css";
-import data from "../../utils/constants/data";
-import { useState } from "react";
+// import data from "../../utils/constants/data";
+// import { useState } from "react";
 import { nanoid } from "nanoid";
 
-function Movies() {
-
-  const [movies, setMovies] = useState(data);
+function Movies(props) {
+  const {movies, setMovies} = props;
 
   function tambahFilm(){
     const movie = {
@@ -14,10 +13,10 @@ function Movies() {
       title: "One Piece",
       year: "1999",
       type: "Anime",
-      poster: "https://picsum.photos/536/354"
+      poster: "https://picsum.photos/300/400"
     };
 
-    setMovies([...movies, movie])
+    setMovies([...movies, movie]);
   }
 
   return (
