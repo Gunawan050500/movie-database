@@ -1,11 +1,13 @@
-import styles from "./Container.module.css"
+import styled from "styled-components";
+
+const StyledContainer = styled.nav`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+`;
 
 function Container(props) {
-    return (
-        <div className={styles.container}>
-            {props.children}
-        </div>
-    )
+  return <StyledContainer>{props.children}</StyledContainer>;
 }
 
 export default Container;

@@ -1,7 +1,7 @@
-function Alert(props){
-    const{Children} = props;
+function Alert(props) {
+  const { children } = props;
 
-    return <div>{Children}</div>
+  return <div>{children}</div>;
 }
 
 export default Alert;
