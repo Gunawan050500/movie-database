@@ -116,7 +116,7 @@ function AddMovieForm(props) {
   return (
     <StyledForm>
       <section>
-        <div class="form__left">
+        <div className="form__left">
           <img src="https://picsum.photos/536/354" alt="" />
         </div>
         <div className="form__right">

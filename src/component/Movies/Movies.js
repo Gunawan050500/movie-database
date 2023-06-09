@@ -6,7 +6,7 @@ import { nanoid } from "nanoid";
 import StyledMovies from "./StyledMovies";
 
 function Movies(props) {
-  const { movies, setMovies } = props;
+  const { movies, setMovies, setTitle } = props;
 
   function tambahFilm() {
     const movie = {
@@ -23,7 +23,7 @@ function Movies(props) {
   return (
     <StyledMovies>
       <section>
-        <h2>Latest Movies</h2>
+        <h2>{setTitle}</h2>
         <div className="movie__container">
           {movies.map(function (movie) {
             return <Movie key={movie.id} movie={movie} />;

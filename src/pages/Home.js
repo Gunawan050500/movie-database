@@ -7,21 +7,21 @@ import { useState } from "react";
 function Main() {
   const [movies, setMovies] = useState(data);
 
-    return (
-      <main>
-        <Hero />
-        <Movies movies={movies} setMovies={setMovies}/>
-        <AddMovieForm movies={movies} setMovies={setMovies}/>
-      </main>
-    );
-  }
+  return (
+    <main>
+      <Hero />
+      <Movies setTitle="Latest Movies" movies={movies} setMovies={setMovies} />
+      <AddMovieForm movies={movies} setMovies={setMovies} />
+    </main>
+  );
+}
 
-function Home(){
-    return (
-        <div>
-            <Main />
-        </div>
-    );
+function Home() {
+  return (
+    <div>
+      <Main />
+    </div>
+  );
 }
 
 export default Home;
