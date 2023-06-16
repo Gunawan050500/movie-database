@@ -5,6 +5,7 @@ import CreateMovie from "./pages/Movie/CreateMovie";
 import NowPlaying from "./pages/Movie/NowPlaying";
 import Popular from "./pages/Movie/Popular";
 import TopRated from "./pages/Movie/TopRated";
+import Detail from "./pages/Movie/Detail";
 // import Counter from "./component/Counter/Counter";
 import { ThemeProvider } from "styled-components";
 import theme from "./utils/constants/theme";
@@ -21,6 +22,8 @@ function App() {
             <Route path="/movie/popular" element={<Popular />}></Route>
             <Route path="/movie/now" element={<NowPlaying />}></Route>
             <Route path="/movie/top" element={<TopRated />}></Route>
+            <Route path="/movie/:movieid" element={<Detail />}></Route>
+            <Route path="*" element={<h2>404</h2>}></Route>
           </Routes>
         </Layout>
       </ThemeProvider>

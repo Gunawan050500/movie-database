@@ -25,6 +25,10 @@ const StyledNavbar = styled.div`
     margin-bottom: 1rem;
   }
 
+  li a {
+    color: #fff;
+  }
+
   @media screen and (min-width: 768px) {
     nav {
       flex-direction: row;
