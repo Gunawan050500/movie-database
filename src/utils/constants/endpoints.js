@@ -1,5 +1,3 @@
-import { useParams } from "react-router-dom";
-
 const API_KEY = process.env.REACT_APP_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
 
