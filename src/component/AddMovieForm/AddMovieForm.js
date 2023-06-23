@@ -3,12 +3,16 @@ import { useEffect, useState } from "react";
 import Alert from "../Alert/Alert";
 import Button from "../Ui/Button/Button";
 import StyledForm from "./StyledForm";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addMovies } from "../../feature/moviesSlice";
 
 // Menangkap props
 function AddMovieForm(props) {
   // Destructing props: state movies
   const { movies, setMovies } = props;
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: "",
     date: "",
@@ -86,7 +90,7 @@ function AddMovieForm(props) {
     }
   }
 
-  function addMovie() {
+  function submitMovie() {
     const movie = {
       id: nanoid(),
       title: title,
@@ -96,14 +100,15 @@ function AddMovieForm(props) {
     };
 
     // SOLVED: HOW TO ADD MOVIE TO MOVIES :)
-    setMovies([...movies, movie]);
+    dispatch(addMovies(movie));
+    navigate("/");
   }
 
   function handleSubmit(e) {
     e.preventDefault();
 
     if (validate()) {
-      addMovie();
+      submitMovie();
     }
   }
   // useEffect(()=>{

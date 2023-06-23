@@ -28,7 +28,9 @@ function DetailMovie() {
     <StyledDetailMovie>
       <div className="poster">
         <img
-          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w${
+            movie.backdrop_path ? "500" : "300"
+          }/${movie.backdrop_path ?? movie.poster_path}`}
           alt=""
         />
       </div>

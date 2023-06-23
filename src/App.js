@@ -6,7 +6,6 @@ import NowPlaying from "./pages/Movie/NowPlaying";
 import Popular from "./pages/Movie/Popular";
 import TopRated from "./pages/Movie/TopRated";
 import Detail from "./pages/Movie/Detail";
-// import Counter from "./component/Counter/Counter";
 import { ThemeProvider } from "styled-components";
 import theme from "./utils/constants/theme";
 import GlobalStyle from "./component/GlobalStyled/GlobalStyled";
